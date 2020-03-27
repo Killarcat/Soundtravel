@@ -1,0 +1,105 @@
+/**
+ * fil: css/style.css
+ **/
+
+/* nav icon bar */
+
+.bg-img {
+  /* The image used */
+  background-image: url("banner.jpg");
+
+  min-height: 380px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* nav icon bar */
+.icon-bar {
+  width: 100%; /* Full-width */
+  overflow: auto; /* Overflow due to float */
+}
+
+.icon-bar a {
+  float: left; /* Float links side by side */
+  text-align: center; /* Center-align text */
+  width: 14%; /* Equal width (7 icons with 14% width each = 100%) */
+  padding: 12px 0; /* Some top and bottom padding */
+  transition: all 0.3s ease; /* Add transition for hover effects */
+  height: 10%
+}
+
+.icon-bar a:hover {
+  background-color: #ff00ff; /* Add a hover color */
+}
+
+
+/* grid lay out: big screen */
+.container {
+	display: grid;
+	grid-template-areas:
+		'header header header header header header'
+		'left  left  main   main   right  right'
+		'footer footer footer footer footer footer'; /* note: quotation marks */
+	grid-gap: 10px;
+	background-color: transparent;
+	padding: 10px;
+}
+
+
+/* asign elements, classes or id's to grid areas */
+header {
+	grid-area: header;
+}
+
+nav {
+	grid-area: header;
+}
+
+main {
+	grid-area: main;
+}
+
+#left {
+    /* yes: you can use an id or classes */
+	grid-area: left;
+}
+
+#right {
+    /* yes: you can use an id or classes */
+	grid-area: right;
+}
+
+footer {
+	grid-area: footer;
+}
+
+/* Color, text size, padding */
+header,
+nav,
+main,
+aside,
+footer {
+	background-color: rgba(255, 255, 255, 0.8);
+	text-align: center;
+	padding: 20px 0;
+	font-size: 30px;
+}
+
+/* Mobile devices: just one column */
+@media only screen and (max-width: 600px) {
+	.container {
+		display: grid;
+		grid-template-areas:
+			'header'
+			'menu'
+			'main'
+			'right'
+			'footer';
+		grid-gap: 10px;
+		background-color: silver;
+		padding: 10px;
+	}
+}
